@@ -10,18 +10,33 @@ public class Project1{
 
 	private static void createSubset(int n, int m, int set[], int subset[], int index, int subIndex){
 
-
+		//prints the subset array with spaces
 		if(subIndex == m){
-			//print the subset array
 			for(int i = 0; i < m; i++){
 				System.out.print(subset[i] + " ");
 			}
+			//makes it go next line
 			System.out.println();
-			subIndex--;
+			// subIndex--; //this didnt work
+			return;
 		}
 
+		//fixes the array index out of bounds
+		//when the index gets larger than the set array
+		if(index >= n){
+			// index--; //this didnt work
+			//jump out of method when last subset is printed
+			return;
+		}
+
+		//puts subset of the set into the array
 		subset[subIndex] = set[index];
+		//go to next index and repeat until subset array is full
 		createSubset(n, m, set, subset, index+1, subIndex+1);
+
+		//the subindex doesnt go to the next position
+		// but the index of set array goes to the next position
+		createSubset(n, m, set, subset, index+1, subIndex);
 
 	}//end createSubset
 
