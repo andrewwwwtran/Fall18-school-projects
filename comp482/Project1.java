@@ -15,16 +15,15 @@ public class Project1{
 			for(int i = 0; i < m; i++){
 				System.out.print(subset[i] + " ");
 			}
-			//makes it go next line
+			//print a new line
 			System.out.println();
-			// subIndex--; //this didnt work
 			return;
 		}
 
 		//fixes the array index out of bounds
 		//when the index gets larger than the set array
 		if(index >= n){
-			// index--; //this didnt work
+			// index--; //didnt work, infinite loop w.o return
 			//jump out of method when last subset is printed
 			return;
 		}
@@ -59,6 +58,9 @@ public class Project1{
 
 		//call method with index starting at 0
 		createSubset(n, m, setArray, subsetArray, 0, 0);
+
+		//close scanner
+		scanner.close();
 
 	}//end main
 }//end class
