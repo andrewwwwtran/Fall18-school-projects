@@ -1,0 +1,100 @@
+/*Colour Palette
+#000000 black
+#66666E dark grey
+#9999A1 grey
+#E6E6E9 light grey
+#F4F4F6 lighter grey
+
+#0A090C
+#F0EDEE
+#07393C
+#2C666E
+#90DDF0
+*/
+
+/*Global Styles*/
+
+html{
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+body{
+  background: #FFE4E1;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+h1, h2{
+  font-family: 'Kaushan Script', cursive;
+  font-weight: 400;
+}
+h1{
+  font-size: 80px;
+}
+h2{
+  font-size: 40px;
+  margin-top: 0;
+}
+.content-wrap{
+  max-width: 950px;
+  margin: 0px auto;
+  padding: 50px;
+  overflow: auto;
+}
+.col-narrow{
+  width: 30%;
+  float: left;
+}
+.col-wide{
+  width: 70%;
+  float: left;
+  padding-left: 20px;
+}
+  /*Links*/
+a{
+  color: #F00;
+}
+a:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+.projects a:hover{
+  color:
+}
+
+/*Header and Footer*/
+header, footer {
+  background: #2C666E;
+  color: #E6E6E9;
+}
+
+/*header*/
+.profile-img{
+  display: inline-block;
+  border-radius: 50%;
+  /*float: left;*/
+  /*margin-right: 30px;*/
+}
+header{
+  /*text-align: center;*/
+}
+header h1, header h2{
+  color: #E6E6E9;
+  margin: 0;
+}
+
+/*footer*/
+footer{
+  text-align: center;
+}
+
+
+/*Education and Projects*/
+
+.education,
+.projects{
+  background: #F0EDEE;
+  background: linear-gradient(to right, #90DDF0, #F0EDEE);
+}
