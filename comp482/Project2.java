@@ -12,27 +12,13 @@ public class Project2{
 
 	public static void main(String[] args) throws IOException{
 
+		// init scanner for input file
 		Scanner scanner = new Scanner(new File("input2.txt"));
 
-		int sizeOfMatrix=0;
+		// create a 2d array
+		int list[][] = new int[][];
 
-		while(!scanner.hasNext("\n")){
-			// store this number
-			sizeOfMatrix++;
-		}
-
-		System.out.println(sizeOfMatrix);
-
-		//init array
-		int list[][] = new int[sizeOfMatrix][sizeOfMatrix];
-
-		//read in the matrix
-		// read the row of the matrix until hit a new line,
-		for(int j = 0; j <= sizeOfMatrix; j++){
-			for(int k = 0; k < j; k++){
-				list[j][k] = scanner.nextInt();
-			}
-		}
+		// read from file
 
 	}//end main
 }//end class
