@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>my homepage 2.0</title>
+	</head>
+
+	<body>
+		<h2>October Homepage</h2>
+		<!-- more form input types  -->
+		<!-- the form action is where the form takes you when you hit submit -->
+		<form class="" action="https://www.google.com" method="get" autocomplete="on">
+			<!-- input type color -->
+			<p>
+				<label> Colors: <input type="color" name="colors" autofocus> </label>
+				<!-- autofocus tells the page to focus on the form you want  -->
+			</p>
+			<!-- input type date -->
+			<p>
+				<label> Date: <input type="date" name="date"> (mm-dd-yyyy) </label>
+			</p>
+			<!-- input type datetime -->
+			<!-- <p> -->
+				<!-- <label> Date and time: <input type="datetime"> </label> -->
+			<!-- </p> -->
+			<!-- Better practice to use the local data time  -->
+			<!-- input type date time local -->
+			<p>
+				<label> Date and time (local): <input type="datetime-local" name="localdatetime"> </label>
+			</p>
+			<!-- input type email -->
+			<p>
+				<label> Email: <input type="email" name="email" placeholder="email@domain.com"> </label>
+			</p>
+			<!-- input type month -->
+			<p>
+				<label> Month: <input type="month" name="month" value=""> month-year </label>
+			</p>
+			<!-- input type number -->
+			<p>
+				<label> Number: <input type="number" min="0" max="7" step="1" value="4"> </label> Enter number between 0-7
+			</p>
+			<!-- input type range -->
+			<p>
+				<label> Range: 0 <input type="range" min="0" max="10" value="5"> 10 </label>
+			</p>
+			<!-- input type search -->
+			<p>
+				<label> Search: <input type="search" name="searchbar" placeholder="search query"> </label> Enter search query here.
+			</p>
+			<!-- input type telephone -->
+			<p>
+				<label> Telephone: <input type="tel" placeholder="(###) ###-####" pattern="\(\d{3}\) +\d{3}-\d{4}" required maxlength="20"> </label>
+				(###) ###-####
+			</p>
+			<!-- inclass stuff -->
+			<p>
+				<label>Tele 2: <input type="tel" placeholder="###-###-####" pattern="\d{3}-\d{3}-\d{4}"> </label>
+			</p>
+			<!-- input type time -->
+			<p>
+				<label> Time: <input type="time"> (hh:mm ff) </label>
+			</p>
+			<!-- input type URL -->
+			<p>
+				<label> URL: <input type="url" placeholder="https://www.homepage.com"> (http://www.yourdomain.com) </label>
+			</p>
+			<!-- input type week -->
+			<p>
+				<label> Week: <input type="week"> </label> Week # , yyyy
+			</p>
+			<!-- autocomplete example, one of form's attributes is autocomplete="on" -->
+			<p>
+				<label for="BirthMonth"> Birth Month: <input type="text" id="BirthMonth" placeholder="Select a Month" list = "months" >
+					<datalist id="months">
+						<option value="January">
+						<option value="Febuary">
+						<option value="March">
+						<option value="April">
+						<option value="May">
+						<option value="June">
+						<option value="July">
+						<option value="August">
+						<option value="September">
+						<option value="October">
+						<option value="November">
+						<option value="December">
+					</datalist>
+				</label>
+			</p>
+			<p>
+				<input type="submit" name="Submit">
+				<input type="reset" name="Clear">
+			</p>
+		</form>
+
+
+		<!-- back to top -->
+		<a href="#top">Back To Top</a>
+	</body>
+</html>
