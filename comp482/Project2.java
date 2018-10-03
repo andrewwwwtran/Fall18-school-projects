@@ -32,13 +32,12 @@ public class Project2{
 				if(list[i][j] == 0 && list[j][i] == 0){
 					if(!testList.contains(i)){
 						testList.add(i);
+						list[i][j] = -1;
 					}
 					if(!testList.contains(j)){
 						testList.add(j);
+						list[j][i] = -1;
 					}
-					//mark them
-					// list[i][j] = -1;
-					list[j][i] = -1;
 				}
 			}
 		}
