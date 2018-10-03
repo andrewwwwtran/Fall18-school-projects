@@ -37,7 +37,7 @@ public class Project2{
 						testList.add(j);
 					}
 					//mark them
-					list[i][j] = -1;
+					// list[i][j] = -1;
 					list[j][i] = -1;
 				}
 			}
@@ -48,6 +48,7 @@ public class Project2{
 			}
 			System.out.println();
 		}
+		System.out.println(testList.size());
 		return testList.size();
 	}
 
