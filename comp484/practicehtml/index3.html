@@ -2,10 +2,146 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 		<title>index3</title>
-		<link rel="stylesheet" href="test.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="./css/test.css">
+		<!-- <style media="screen">
+			this is another way to style your html
+			this is called embedded css
+			it is embedded into your html file rather than making a css file
+			usually you would want to make another file for css
+		</style> -->
 	</head>
 	<body>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<!-- october 8 2018 -->
+
+		<h4>10.08.18</h4>
+		<p>Div is a block element</p>
+		<p>span is an inline element, -> used to style a part of a block element.</p>
+		<h5>different styling</h5>
+		<p>so far we've learned:
+			<ul>
+				<li>color</li>
+				<li>background-color</li>
+				<li>font-style</li>
+				<li>font-size</li>
+				<p>go with relative values ie. 16 px</p>
+				<li>font-weight</li>
+				<li>font-family</li>
+				<p>for font-family , start with the font you want, then end with a generic font ie sans-serif, serif, georgia, etc. this is to make sure that if the font you wanted isnt working, itll default to the generic fonts.</p>
+				<li>border</li>
+				<p>you can style the border with, width of the border, style ie solid, dashed, and color of the border.</p>
+			</ul>
+		 </p>
+		<h5>embedded styling</h5>
+		<p>
+			styles that are placed in a style element in the head section use selectors to apply style elements throughout the entire document.
+			ie &lt;style type = &quot;text/css&quot;&gt;.
+			which is inside the html file, init in the head section.
+			whichever element that has more specificity, the style will override the style given to it.
+		</p>
+		<ul class="css-select"><h5>css selector</h5>
+			<li>.class-name { styles } </li>
+			<p> the class attribute is mainly used to styling. It lets you organize your css file. class selectors in the css file should be</p>
+			<li>element { styles }</li>
+			<p> selects all element</p>
+			<li>#idname { styles }</li>
+			<p> is id selector in the css.</p>
+			<li>* { styles }</li>
+			<p> is a way to select all the elements for css.</p>
+			<li>element1, element2 { styles }</li>
+			<p> selects all element1 and element2</p>
+			<li>element1 element2 { styles }</li>
+			<p> selects all element2 inside element1, nested elements</p>
+			<li>background-color: inherit; // background-color: initial;</li>
+			<p>inherit is a way to get the styles from that elements' parent. initial is a way to get the style for that element to not inherit from its parent, But setting initial does not always override the inheritance.</p>
+			<li>element1>element2 { styles }</li>
+			<p>selects all element 2 where the parent is element1, direct child </p>
+			<li>element1+element2 { styles }</li>
+			<p>selects all element2 that are placed immediately after element1, this is more strict than ~ </p>
+			<li>element1~element2 { styles }</li>
+			<p>selects every element2 that are preceded by a element1, general siblings of element1</p>
+			<li>[attribute] ie. input[type="text"]</li>
+			<p>selects all elements with a target attribute, the example combines both element selector and attribute selector</p>
+		</ul>
+
+		<!-- test 100818-->
+		<div class="test-class">
+			<p>in class test exercises</p>
+			<p>showed how to remove the underlining in the links for css</p>
+			<a class="search" href="http://google.com" target="_blank">Google</a>
+			<a class="social" href="http://instagram.com" target="_blank">Insta</a>
+			<a class="social" href="http://twitter.com" target="_blank">Tweet</a>
+		</div>
+
+		<div class="spans-in-div">
+			<span>span that's direct child of div. The quick brown fox jumps over the lazy dog. </span>
+			<p>The quick brown fox jumps over the lazy dog. <span>span that's indirect child of div. The quick brown fox jumps over the lazy dog. </span> The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </p>
+		</div>
+
+
+		<!-- october 10 2018 -->
+
+		<h4>10.10.18</h4>
+
+		<div class="notes-oct-ten">
+			<h6>notes</h6>
+			<p>
+				<h5>conflicting styles</h5>
+				styles may be defined by a user (person viewing your webpage), an author (whoever is writing the doc) or a user agent (browser default style). styles defined by the user take precedence over styles defined by the user agent. styles defined by authors take precedence over styles defined by the user.
+				(User important) > Author > user > user-agent. <br>
+				some conflicting styles are
+				<ul>text decorations
+					<li>line-through</li>
+					<li>underlined</li>
+					<li>overline</li>
+				</ul>
+				properties defined for child and descendant elements have a higher specificity than properties defined for parent and ancestor elements. specificity values go from Most [style attribute, ID, class/ pseudo-class attribute, elements] Least.
+				In the presence of 2 conflicting rules with the same specificity, order will choose the precedence. <br>
+				pseudoclasses give you access to content that's not declared in the document.
+				It can be used to style an element when a user mouse moves over it which is hover, or when the element gets focus.
+				for example -> a:link{ color: #FFF; } or a:hover{ color: #0F0; } <br>
+				pseudoclass selector can be combined with a css class
+				ex. -> a.class-name:hover{ color: #F00; } <br>
+				Always use relative length measurements ie. px (pixels), em (usually the height of M), ex (usually the height of x), and percentages (of the font's default size).
+
+				<h5>linking external style sheets</h5>
+				external style sheets are separate documents that contain only CSS rules. ie. in a file called styles.css
+				This helps create a uniform look for a website.
+				To link a css file to html doc, add under head section of the html file. <br>
+				&lt;link rel = "stylesheet" type = "text/css" href = "./file-directory/name-of-css-file.css" &gt;
+
+				<h5>positioning elements:</h5>
+				Absolute positioning provides greater control over where on a page elements reside.
+				<ul>
+					<li>static: html elements are positioned static by default. arent affected by the top, bottom, left, right properties.</li>
+					<li>relative: the element is positioned relative to its normal position</li>
+					<li>fixed: the element is positioned relative to the viewport whih means it always stays in the same place even if the page is scolled.</li>
+					<li>Absolute: is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed)</li>
+					specifying an element's position as absolute removes it from the normal flow.
+					<li>sticky</li>
+					<li>z-index is to tell the browser what to send to the background (lower index) and foreground (higher index)</li>
+				</ul>
+				elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. THey also work differently depending on the position value.
+		</div>
+		<!-- end notes for october 10 -->
+
+		<h6>examples</h6>
+		<div class="examples-oct-ten">
+			<!-- links -->
+			<a href="http://google.com" target="_blank">google1</a>
+			<a href="http://google.com" target="_blank">google2</a>
+			<a href="http://google.com" target="_blank">google3</a>
+
+			<p> <img src="https://picsum.photos/200/?image=17" alt="random pic" class="back"> </p>
+			<p> <img src="https://picsum.photos/300/?image=13" alt="random pic" class="fore"> </p>
+			<p class="text"> some text here </p>
+
+		</div>
+		<!-- end examples from october 10 -->
+
+		<a href="#top">Back To Top</a>
 	</body>
 </html>
