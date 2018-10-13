@@ -1,14 +1,12 @@
-#enter through b
-d(enter, b).
-d(c, b).
-d(b, c).
-d(c, d).
-d(d, c).
-d(b, e).
-d(e, b).
-d(d, e).
-d(e, d).
-d(f, e).
-d(e, f).
-d(exit, e).
-d(X, Y) :- d(X, Z), d(Z, Y).
+#facts
+door(in,b).
+door(b,e).
+door(b,c).
+door(c,d).
+door(d,e).
+door(e,f).
+door(f,e).
+door(c,b).
+door(e,out).
+
+path(A,B) :- door(A,C), path(C,B).
