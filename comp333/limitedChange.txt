@@ -1,0 +1,91 @@
+[1mtrue.[0m
+
+['change.pl'].
+
+
+[1mtrue.[0m
+
+change(1, 2, 0, 0, 0).
+
+
+[1mtrue [0m;
+[1;31mfalse.[0m
+
+change(0, 0, 0, 0, Pennies).
+
+
+[1;31mfalse.[0m
+
+change(1, 1, 1, 1, Cents).
+
+
+[1;31mfalse.[0m
+
+change(_, _, _, _, _).
+
+
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1mtrue [0m;[1m;[0m
+[1;31mfalse.[0m
+
+change(_, 3, A, B, 0).
+
+
+[1;31mfalse.[0m
+
+change(_, 3, A, B, 0), B<2.
+
+
+[1;31mfalse.[0m
+
+change(3, _, _, _, _).
+
+
+[1;31mfalse.[0m
+
+change(12, _, _, _, _).
+
+
+[1;31mfalse.[0m
+
+change(2, Q, D, N, P).
+
+
+[1;31mfalse.[0m
+
+change(X1, X2, X3, X4, X5).
+
+
+X1 = X4, X4 = 0,
+X2 = 2,
+X3 = 4,
+X5 = 10 ;[1m;[0m
+X1 = X4, X4 = X5, X5 = 0,
+X2 = 2,
+X3 = 5 ;[1m;[0m
+X1 = X4, X4 = 0,
+X2 = 3,
+X3 = 2,
+X5 = 5 ;[1m;[0m
+X1 = 1,
+X2 = X4, X4 = 0,
+X3 = 4,
+X5 = 10 ;[1m;[0m
+X1 = 1,
+X2 = X4, X4 = X5, X5 = 0,
+X3 = 5 ;[1m;[0m
+X1 = X2, X2 = 1,
+X3 = 2,
+X4 = 0,
+X5 = 5 ;[1m;[0m
+X1 = 1,
+X2 = 2,
+X3 = X4, X4 = X5, X5 = 0 ;[1m;[0m
+[1;31mfalse.[0m
+
+noprotocol.

@@ -1,0 +1,87 @@
+/* color palette */
+#424651
+#BCE7FD
+#C492B1
+#AF3B6E
+#21FA90
+
+#6290C3
+#C2E7DA
+#373F47
+#6C91C2
+#9EEFE5
+
+
+/* global styles */
+
+html{
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+body{
+  background-color: #BCE7FD;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+h5{
+	font-size: 20px;
+	font-weight: 150;
+}
+h6{
+	font-size: 17px;
+}
+p{
+	font-size: 16px;
+	color: #424651;
+}
+ul{
+	list-style-type: lower-alpha;
+}
+
+/* links */
+a{
+	color: #F00;
+}
+a:hover{
+	color: #FFF;
+}
+
+/* class styles */
+
+.test-class{
+	color: #AF3B6E;
+}
+.social{
+	text-decoration: none;
+}
+.css-select{
+	list-style-type: lower-roman;
+}
+
+/* in class exercise test */
+div span{
+	color: green;
+}
+
+div.examples-oct-ten a:hover{
+	color: #21FA90;
+}
+.back{
+	position: absolute;
+	/* top: 10px; */
+	right: 180px;
+	z-index: 2;
+}
+.fore{
+	position: absolute;
+	/* top: auto; */
+	right: 20px;
+	z-index: 1;
+}
+.text{
+	position: absolute;
+	left: 300px;
+	z-index: 3;
+}
