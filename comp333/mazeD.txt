@@ -1,0 +1,10 @@
+[1mtrue.[0m
+
+solve(L).
+
+
+[1;31mfalse.[0m
+
+noprotocol.
+
+
