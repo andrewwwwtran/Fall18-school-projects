@@ -40,6 +40,9 @@ p{
 ul{
 	list-style-type: lower-alpha;
 }
+ul.menu{
+	list-style: none;
+}
 
 /* links */
 a{
@@ -47,6 +50,36 @@ a{
 }
 a:hover{
 	color: #FFF;
+}
+a.menu{
+	text-decoration: none;
+}
+
+/* navigation */
+nav{
+	background-color: #9EEFE5;
+	border: 2px solid #000;
+	text-align: center;
+	width: 150px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 20;
+	position: absolute;
+}
+nav:hover ul.menu{
+	display: block;
+}
+ul.menu{
+	background-color: #C2E7DA;
+	padding: 0px;
+	margin: 0px;
+	display: none;
+}
+li.menu{
+	border-top: 2px solid #000;
+}
+li.menu:hover{
+	background-color: lightgrey;
 }
 
 /* class styles */
@@ -123,4 +156,44 @@ div.notes-oct-nanaju, p.nanaju{
 }
 .border-three{
 	border: 4px dotted #AF3B6E;
+}
+
+@media print{
+	p{
+		font-size: 10pt;
+		color: purple;
+		font-family: times, serif;
+	}
+	body{
+		background-color: white;
+	}
+	h4{
+		color: darkblue;
+		font-family: times, serif;
+	}
+}
+/* need all 3 because you dont want a phone to have 3 columns and have the readability hard. */
+@media handheld and (max-width: 480px), screen and (max-width: 480px), screen and (max-device-width: 480px){
+	div{
+		column-count: 1;
+		-webkit-column-count: 1;
+	}
+}
+@media only screen and (min-width: 481px) and (max-width: 1024px){
+	div{
+		column-count: 2;
+		column-gap: 30px;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 30px;
+		column-rule: 2px solid #f00;
+	}
+}
+@media only screen and (min-width: 1025px){
+	div{
+		column-count: 3;
+		column-gap: 30px;
+		-webkit-column-count: 3;
+		-webkit-column-gap: 30px;
+		column-rule: 2px solid black;
+	}
 }
