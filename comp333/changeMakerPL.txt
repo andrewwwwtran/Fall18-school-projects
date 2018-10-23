@@ -1,27 +1,18 @@
 prototype('changeMakerPL.txt').
-
 true.
 
 ['change.pl'].
-
-
 true.
 
 change(1, 2, 0, 0, 0).
-
-
 true.
 false.
 
 change(0, 0, 0, 0, Pennies).
-
-
 Pennies = 100 ;
 false.
 
 change(1, 1, 1, 1, Cents).
-
-
 Cents = 10 ;
 false.
 

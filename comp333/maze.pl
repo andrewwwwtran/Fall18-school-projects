@@ -1,12 +1,15 @@
 #facts
-door(in,b).
-door(b,e).
-door(b,c).
-door(c,d).
-door(d,e).
-door(e,f).
-door(f,e).
-door(c,b).
-door(e,out).
+d(enter,b).
+d(b,e).
+d(b,c).
+d(c,d).
+d(d,e).
+d(e,exit).
 
-path(A,B) :- door(A,C), path(C,B).
+start(enter).
+finish(exit).
+
+path(X,X,[]).
+path(X,Z,[X-Y|Steps]) :- d(X,Y), path(Y,Z,Steps).
+
+solve(L) :- start(X), finish(Y), path(X,Y,L).

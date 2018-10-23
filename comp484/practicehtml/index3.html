@@ -14,10 +14,19 @@
 		</style> -->
 	</head>
 	<body>
+		<nav>Menu
+			<ul class="menu">
+				<li class="menu"><a class="menu" href="#">Home</a> </li>
+				<li class="menu"><a class="menu" href="#oct8notes">10.08 notes</a> </li>
+				<li class="menu"><a class="menu" href="#oct10notes">10.10 notes</a> </li>
+				<li class="menu"><a class="menu" href="#oct17notes">10.17 notes</a> </li>
+				<li class="menu"><a class="menu" href="#oct22notes">10.22 notes</a> </li>
+			</ul>
+		</nav>
 
 		<!-- october 8 2018 -->
 
-		<h4>10.08.18</h4>
+		<h4 id="oct8notes">10.08.18</h4>
 		<p>Div is a block element</p>
 		<p>span is an inline element, -> used to style a part of a block element.</p>
 		<h5>different styling</h5>
@@ -84,7 +93,7 @@
 
 		<!-- october 10 2018 -->
 
-		<h4>10.10.18</h4>
+		<h4 id="oct10notes">10.10.18</h4>
 
 		<div class="notes-oct-ten">
 			<h6>notes</h6>
@@ -141,6 +150,81 @@
 
 		</div>
 		<!-- end examples from october 10 -->
+
+		<!-- october 17 2018 notes/examples -->
+		<h4 id="oct17notes">10.17.18</h4>
+		<div class="notes-oct-nanaju">
+			<h6>notes</h6>
+			<p class="nanaju">
+				Relative position does not remove the element from the normal flow of elements. Superscript and subscript example. <br>
+				.super { position: relative; top: -10px; } <br>
+				.sub { position: relative; top: -10px; } <br>
+				.right { position: relative; top: 10px; } <br>
+				.left { position: relative; top: -10px; } <br>
+				inline and block level elements <br>
+				inline doesn't change the flow of the document, ex of inline elements are img, a, em, span(which is a grouping element: doesnt apply any formatting to its contents. creates a container for CSS) <br>
+				block-level elements are displayed on their own line ie. p, all headings (h1-h6), div(a grouping element). <br>
+				CSS can control the backgrounds of block level elements by adding colors and images with flexible position and attachment and repitition. <br>
+				background image's syntax is <br>
+					background-image: url(logo.png); &lt; -- gets image<br>
+					background-repeat: no-repeat; &lt; no repetition of image<br>
+					background-position: bottom right; &lt; position of image<br>
+					background-attachment: fixed; &lt; makes it so the image stays in place<br>
+				which will be in the body{} of css <br>
+
+				<h5>box model and text flow</h5>
+				block level html5 elements have a virtual box drawn around them based on the css box model.
+			</p>
+		</div>
+
+		<div class="examples-oct-nanaju">
+			<p>super script example --> <span class="super"> span with class super for superscript ex. </span> </p>
+			<p>subscript example --> <span class="sub"> span with class sub for subscript ex. </span> </p>
+			<p> shift right example --> <span class="right"> span with class right for shift right ex. </span> </p>
+			<p> shift left example --> <span class="left"> span with class left for shift left ex. </span> </p>
+			<p class="border-one">border1. border1. border1. border1. border1. border1. </p>
+			<p class="border-two">border2 border2 border2 border2 border2 border2 border2 border2 </p>
+			<p class="border-three">border3. border3. border3. border3. border3. border3. border3. border3. </p>
+		</div>
+
+		<!-- october 22 2018 notes/examples -->
+		<h4 id="oct22notes">10.22.18</h4>
+		<div class="notes22">
+
+			<h5>Media Types and Queries</h5>
+			<ul>
+				CSS media types allows you to decide what a page should look like depending on the kind of media being used to display the page including the width and height of the viewpoint or the device, orientation, and resolution. <br>
+				<li>all: for all media type devices</li>
+				<li>screen: for computer screens, smartphones, tablets..</li>
+				<li>handheld: designed for mobile internet devices</li>
+				<li>braille: for machines that can read or print web pages in braille</li>
+				<li>speech: allows dev to give text to speech</li>
+				<li>print: affects a web pages appearance when its printed</li>
+			</ul>
+			<ul>
+				responsive web design: media query is a CSS technique that uses @media rule to include a block of CSS properties only if a certain condition is true. <br> common media features include
+				<li>width</li>
+				<li>height</li>
+				<li>device-width</li>
+				<li>device-height</li>
+				<li>orientation</li>
+				<li>aspect-ratio</li>
+				<li>device-aspect-ratio</li>
+				ex. <br>
+				@media handheld and (max-width: 480px)
+				{
+					div{
+						-webkit-column-count: 1;
+						column-count: 1;
+					}
+				} <br>
+				-webkit- is a css vendor prefix for android, chrome, ios, and safari, -moz- for firefox,-ms- for IE, & -o- for opera <br>
+				media type only is used to hide css from older browsers because we know it doesn't support what's in the styling sheet.
+			</ul>
+
+
+		</div>
+		<!-- end oct 22 notes -->
 
 		<a href="#top">Back To Top</a>
 	</body>
