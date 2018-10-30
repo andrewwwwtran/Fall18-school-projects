@@ -1,0 +1,15 @@
+body{
+	background-image: url('../images/sugarglider.png');
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-attachment: fixed;
+	background-color: lightblue;
+}
+h1.main-header{
+	text-align: center;
+	font-family: 'Kaushan Script', cursive;
+}
+h2.comfy{
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
