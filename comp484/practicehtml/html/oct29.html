@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>october 29 2018</title>
+		<link rel="stylesheet" href="../css/master.css">
+		<script type="text/javascript" src="../scripts/script1.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
+	</head>
+	<body>
+		<h1 class="main-header">October 29, 2018</h1>
+		<h2 class="comfy">~Stay Comfy~</h2>
+		<div class="script">
+			<script type="text/javascript">
+				var y = 3;
+				var x = 2;
+				var z = null;
+				sprint("y + 2 = "+y+2);
+				sprint("y + 2 = " + (y+2));
+				sprint("z is " + z);
+				sprint("y: " + y++);
+				sprint("Y: " + y);
+				sprint("x: " + ++x);
+				sprint('stuff');
+				sprint("y + x = " + (y+x));
+
+				var age = parseInt(window.prompt("enter age ",12));
+				if(age >= 18)
+					sprint("welcome");
+				if(age < 18)
+					sprint("get out ! you're only " + age + "!");
+				var now = new Date();
+				//sprint("the hour is " + now.getHours());
+				sprint("today's local date is " + now);
+
+				if(now.getHours() <= 8 ){
+					sprint("good morning!");
+				}else if(now.getHours() <= 18 && now.getHours() > 8){
+					sprint("good afternoon!");
+				}else{
+					sprint("good evening!");
+				}
+
+
+			</script>
+		</div>
+	</body>
+</html>

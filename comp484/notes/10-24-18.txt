@@ -1,0 +1,45 @@
+what happens to the files when the client requests the files?
+	the server just sends back the html/css/js files for the browser to interpret
+	what about php files on server side?
+		what is getting sent back from php files is the results of the php file
+			ie. if the php file says to print "hello" then "hello" will be sent back,
+			Not print "hello"
+we should know the difference between having scripts on client side and server side.
+Client Side Scripting ch 6
+	all major web browsers contain JS interpreters which process the commands written in javascript.
+	input script into html file inside head element
+		<script type = "./javascript.js"></script>
+	embedded js in html ex.
+		document.writeln("<h1>welcome</h1>");
+	javascript uses the Document Object Model (DOM): an object representation of an HTML Document
+	object
+		the term object normally implies that attributes (data) and behaviors (methods) are associated with the Object
+		script calls the methods
+		ie. document.writeln(); //document is the object and writeln() is the method for document to print to page.
+	case sensitive, need semicolons
+	need closing script tag
+	syntax for separate js file
+		<script src="./myscript.js"></script>
+	if you use writeln() in the middle of a paragraph, it won't show in the browser because html ignores line breaks.
+	displaying text in an Alert dialog
+		window.alert(""); does a popup with text to grab the user's attention.
+	if doing embedded scripts
+		bad practice to put it in head element because content belongs in body element
+		metadata, links, belong in head element
+	escape sequences in js,
+		backslash is encountered in a string of char, the next char is combined with the backslash to form an escape sequence in js.
+		the escape sequence \n is the newline character. it causes the cursor in the html5 doc to move to the beginning of the next line.
+		in strings \" will produce a " , \' will produce ' , \\ will produce \ , \n produces a new line
+	html forms are used to collect data from the user
+	scripting gives you the ability to generate part or all of a web page's content at the time it is shown to the user.
+		such web pages are said to be dynamic since it has the ability to change.
+	some debugging tools
+		console.log() -> outputs a message to the web console
+		console.dir() -> displays an interactive listing of the properties of a specified js object.
+	to declare a variable in js use
+		var myvariable;
+		variable names start with letter ,can include numbers, $$ and ___
+	if variable is declared but not initialized, it'll return as undefined.
+	parseInt
+		converts its string argument to an integer. important when taking input from the user to use in a numeric context.
+		
