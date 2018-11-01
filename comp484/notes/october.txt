@@ -42,4 +42,22 @@ Client Side Scripting ch 6
 	if variable is declared but not initialized, it'll return as undefined.
 	parseInt
 		converts its string argument to an integer. important when taking input from the user to use in a numeric context.
-		
+
+6.5
+memory concepts
+	- variable names correspond to locations in the computer's memory
+	- every variable has a name, type, and a value
+	* when a value is placed in a memory location, the value replaces the precious value in that location.
+	- when a value is read out of a memory location, the process is nondestructive
+	- good practice is if you're not going to init you variable with something, init it with null.
+		- just so when you launch you will know which variable was undeclared.
+7.4
+control statements
+	- js provides loops
+		while, do-while, for, for-in
+	- js interpreter ignores white-space characters
+		blanks, tabs, and newlines used for indentation and vertical spacing
+
+7.9
+formulating algorithms
+	- indefinite repetition
