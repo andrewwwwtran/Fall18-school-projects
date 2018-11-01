@@ -51,13 +51,78 @@ memory concepts
 	- when a value is read out of a memory location, the process is nondestructive
 	- good practice is if you're not going to init you variable with something, init it with null.
 		- just so when you launch you will know which variable was undeclared.
+CH 7 CONTROL STATEMENTS
 7.4
-control statements
 	- js provides loops
 		while, do-while, for, for-in
 	- js interpreter ignores white-space characters
 		blanks, tabs, and newlines used for indentation and vertical spacing
-
+7.5/7.6
+	if...else
+	- if(this is true){
+			do this;
+		}else{
+			do that;
+		}
+	- can be nested
+	if(this is true){
+		do this;
+	}else if(this is true){
+		do that;
+		if(this is true){
+			do this;
+		}
+	}
+	- another way to do if else
+		condition ? true : false ;
+		ie.	grade >= 50 ? "passed" : "failed";
+7.7
+	while loop
+	- while(this is true){
+			do this;
+		}
+	- if it's never false, result in an infinite loop
+7.8
+	counter controlled repetition
+	- often called definite repetition, because the number of loops is known before the loop is executed.
+	- for loops, while loops with counter, any loops with counters.
+	- javascript represents all numbers as floating point numbers in memory
+		often developed through division
+	- if string is passed to parseInt() and it's a floating point number, then the number is truncated
+	- if string passed to parseInt() does not begin with a number, parseInt() returns NaN (not a number)
+		to check javascript provides isNaN(), returns true if its not a number, otherwise false.
 7.9
-formulating algorithms
-	- indefinite repetition
+	sentinel-controlled repetition
+	- sentinel value aka signal value aka dummy value aka flag value
+		indicated end of data entry
+	- indefinite repetition because number of repetition is not known in advance
+		choose a sentinel value that cannot be confused with acceptable input value
+7.10
+	nested control statements
+	while(true){
+		while(true){
+			if(true){
+				if(false){
+					execute;
+				}
+				exe;
+			}
+			exe;
+		}
+		end first while loop;
+	}
+7.11
+	assignment operators
+	- javascript provides += -= /= *= %=
+7.12
+	increment and decrement operators
+	- if operator is prefixed, ++i, i gets incremented then used
+	- if its postfixed, i++, i gets used then incremented
+	- equality
+		- If the types of the two expressions are different, attempt to convert them to string, number, or Boolean.
+		- null equals both null and undefined
+		- Values are considered equal if they are identical strings, numerically equivalent numbers, the same object, identical Boolean values, or (if different types) they can be coerced into one of these situations.
+	- identity
+		- === and !==
+			- these work like the equality operators except that it doesn't attempt to convert them.
+			- types must be the same to be considered equal

@@ -32,23 +32,36 @@ function oneToTen(){
 
 function quizAverage(){
 	var grade;
+	var count = 0;
+	var total = 0;
+	var gradenum = 0 ;
 	var average = 0;
-	var i = 1;
-	while(i <= 10){
-		grade = parseInt(window.prompt("student " + i + "\'s quiz grade:"));
-		// if didnt enter a number or pressed the cancel button
-		if(isNaN(grade)){
-			window.alert("start over, didn't enter a number.");
-			break;
+	var pass = 0;
+	var fail = 0;
+	// sentinel -1
+	while( gradenum != -1){
+		grade = window.prompt("enter a grade 0-100, enter -1 to finish");
+		gradenum = parseInt(grade);
+		//error check
+		//checks if user entered a number and if the number is between 0 and 100
+		if( !isNaN(gradenum) && (gradenum != -1 ) && ( gradenum >= 0 && gradenum <= 100)){
+			total += gradenum;
+			count++;
+			//check if student passes
+			if(gradenum >= 70){
+				pass++;
+			}else{
+				fail++;
+			}
 		}
-		// entered a number bigger than 100
-		if(grade > 100){
-			window.alert("grade is over 100, try again.");
-			break;
-		}
-		average += grade;
-		i++;
+		else
+			console.log(grade + " is NaN or outside 0-100")
 	}
-	i--;
-	sprint("class quiz average is " + (average/i));
+	if ( count > 0 ){
+		average = total/count ;
+		document.writeln("<p> average is "+average+"</p>");
+		sprint(pass + " students passed, and " + fail + " students failed.");
+	}
+	else
+		document.writeln("<p>no grade entered </p>");
 }
