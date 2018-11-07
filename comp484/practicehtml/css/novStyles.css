@@ -1,0 +1,12 @@
+table, th, td{
+	border: 1px solid black;
+}
+tr.even{
+	background-color: pink;
+}
+thead tr{
+	background-color: grey;
+}
+tr:nth-child(odd){
+	color: purple;
+}

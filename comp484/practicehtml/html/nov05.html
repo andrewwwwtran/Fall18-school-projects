@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Nov 05 2018</title>
+		<link rel="stylesheet" href="../css/master.css">
+		<link rel="stylesheet" href="../css/novStyles.css">
+		<script type="text/javascript" src="../scripts/novScript.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
+	</head>
+	<body>
+		<h1 class="main-header">November 05, 2018</h1>
+		<h2 class="comfy">~Stay Comfy~</h2>
+
+		<script type="text/javascript">
+
+			//practicing while and for loops
+			fontIncreaseDecrease();
+			two2hundred();
+			//a = p ( 1 + r ) ^ n , use Math.pow(x,y) and amount.toFixed(2)
+			//p = 1000, r = 0.05, n = year for 10 years.
+			// sprint("my annual savings in 10 years");
+			annualDeposit();
+
+
+			//switch practice
+			var x = 3;
+			switch (x) {
+				case 2:
+					sprint("x is 2");
+					break;
+				case 3:
+					sprint("x is 3");
+					break;
+				default:
+					sprint("x is none");
+			}
+
+			//creating a list for user input
+			var choice = window.prompt("enter type of list: 1: numeric, 2: lower-roman, 3: lower-alpha")
+			sprint("<ol list-style="lower"> \
+				<li> item 1 </li> \
+				<li> item 2 </li> \
+				<li> item 3 </li> \
+			</ol>");
+		</script>
+	</body>
+</html>
