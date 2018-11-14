@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>November 07 2018</title>
+		<!-- <link rel="stylesheet" href="../css/master.css"> -->
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
+		<style media="screen">
+			body{
+				background-image: url('../images/sugarglider.png');
+				background-repeat: no-repeat;
+				background-position: bottom right;
+				background-attachment: fixed;
+				background-color: lightblue;
+			}
+			h1.main-header{
+				text-align: center;
+				font-family: 'Kaushan Script', cursive;
+			}
+			h2.comfy{
+				text-align: center;
+				font-family: 'Comfortaa', cursive;
+			}
+		</style>
+
+		<script type="text/javascript">
+			let size = 1;
+			do{
+				size++;
+				if(size === 5 || size === 6){
+					size++;
+					// break;
+				}
+				document.writeln("<p style = 'font-size: " + size + "ex'> some text "+size+"</p>");
+				// size++;
+				// if(size==5){
+				// 	break;
+				// }
+			}while (size <= 10);
+
+			function numSquared(num){
+ 				return num * num;
+			}
+
+			for(let i = 1; i <= 10; i++){
+				document.writeln("<p>"+i+"^2 = " +numSquared(i)+"</p>");
+			}
+
+			function maximum(x, y, z){
+				var max = Math.max(x,y,z); // Math.max can have more than 2 parameters.
+				return max;
+			}
+
+			document.writeln("<p>the max of 4, 58, and 324 is " + maximum(4, 58, 324) + "</p>");
+			// var choice;
+			// var listStyle;
+			// var content = "<ol style = 'list-style: ";
+			// // let validInput = true;
+			// choice = window.prompt("Select a list style: 1 (numbered), 2 (lower-roman), 3 (lower-alpha)");
+			// switch (choice) {
+			// 	case "1":
+			// 		listStyle = "decimal";
+			// 		break;
+			// 	case "2":
+			// 		listStyle = "lower-roman";
+			// 		break;
+			// 	case "3":
+			// 		listStyle = "lower-alpha";
+			// 		break;
+			// 	default:
+			// 		listStyle = "upper-alpha";
+			// }
+			// content += listStyle + ";'> <li>item 1</li> <li>item 2</li> <li>item 3</li> </ol>";
+
+		</script>
+	</head>
+	<body>
+		<h1 class="main-header">November 07, 2018</h1>
+		<h2 class="comfy">~Stay Comfy~</h2>
+	</body>
+</html>
