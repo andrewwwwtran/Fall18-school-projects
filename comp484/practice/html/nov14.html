@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>november 14 2018</title>
+		<link rel="stylesheet" href="../css/master.css">
+		<!-- <script type="text/javascript" src="../scripts/script1.js"></script> -->
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
+		<script type="text/javascript">
+
+			var x = 5;
+			var y = 6;
+
+			function a(x){
+				x++;
+				document.writeln(x + ' inside function');
+				return;
+			}
+
+			a(x);
+			document.writeln(x + ' outside function');
+
+			function random(num){
+				return Math.floor(Math.random()*num + 1); //+1 starts at 1 to num
+			}
+
+			//dice rolls
+			function diceRolls(){
+				var die;
+				var die1image;
+				var die2image;
+				var die3image;
+				var die4image;
+
+				window.addEventListener("load", start, "false");
+
+				function start(){
+					var button = document.getElementById('rollbutton');
+					button.addEventListener('click', rollDice, 'false');
+					die1image = document.getElementById("die1");
+					die2image = document.getElementById("die2");
+					die3image = document.getElementById("die3");
+					die4image = document.getElementById("die4");
+				}
+
+				function rollDice(){
+					setImage(die1image);
+					setImage(die2image);
+					setImage(die3image);
+					setImage(die4image);
+				}
+
+				function setImage(dieImg){
+					die = random(6);
+					dieImg.setAttribute("src","../images/die"+die+".png");
+				}
+
+			}//end diceRolls
+
+			diceRolls();
+
+		</script>
+	</head>
+	<body>
+		<h1 class="main-header">november 14, 2018</h1>
+		<h2 class="comfy">~Stay Comfy~</h2>
+
+		<form action="#">
+			<input type="button" id="rollbutton" value="roll dice">
+		</form>
+		<ul>
+			<img src="../images/blank.png" id="die1">
+			<img src="../images/blank.png" id="die2">
+			<img src="../images/blank.png" id="die3">
+			<img src="../images/blank.png" id="die4">
+		</ul>
+	</body>
+</html>
