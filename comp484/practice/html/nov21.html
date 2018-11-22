@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>November 21, 2018</title>
+		<style media="screen">
+
+		</style>
+		<script type="text/javascript">
+			// global variables
+			var x = 1;
+			var y = 2;
+			var outstr = "";
+			window.addEventListener("load", start, false);
+
+			function start(){
+				var x = 50;
+				output = document.getElementById("out");
+				output.innerHTML += "<p>local x (start) is " + x + "</p>";
+				funcA();
+				output.innerHTML += "<p>global y (start) is " + y + "</p>";
+				funcB();
+				output.innerHTML += "<p>local x (start) is " + x + "</p>";
+
+				//factorial
+				output.innerHTML += "<p>factorial " + factorial(5) + "</p>";
+
+				//arrays
+				arrayExample();
+			}
+
+			function funcA(){
+				y *= 10;
+				output.innerHTML += "<p>global x (funcA) is " + x + "</p>";
+				return;
+			}
+
+			function funcB(){
+				var x = 10;
+				x++;
+				output.innerHTML += "<p>local x (funcB) is " + x + "</p>";
+				return;
+			}
+
+			function factorial(num){
+				output.innerHTML += "<p>factorial number is " + num + "</p>";
+				if(num == 1){
+					return 1;
+				}else if(num == 0){
+					return 0;
+				}else if(num > 1){
+					return num * factorial(num-1);
+				}
+			}
+
+			function arrayExample(){
+				var a1 = new Array(5);
+				a1[3] = 7;
+				a1[10] = 100;
+				output.innerHTML += "<p>array = " + a1.join() + "</p>";
+				var b = [1,2,3,4,5];
+				output.innerHTML += "<p>array b length = " + b.length + "</p>";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="out">
+
+		</div>
+	</body>
+</html>
