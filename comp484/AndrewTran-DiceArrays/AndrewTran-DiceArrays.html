@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>5-Dice-JS-Arrays</title>
+		<script type="text/javascript">
+			//global variables
+			var die;
+			var imgObjects = new Array(4);
+			var imgFileNames = new Array(6);
+
+			for(let i = 0; i <= 5; i++){
+				imgFileNames[i] = "./images/die" + (i+1) + ".png";
+			}
+
+			// imgFileNames[0] = "./images/die1.png";
+			// imgFileNames[1] = "./images/die2.png";
+			// imgFileNames[2] = "./images/die3.png";
+			// imgFileNames[3] = "./images/die4.png";
+			// imgFileNames[4] = "./images/die5.png";
+			// imgFileNames[5] = "./images/die6.png";
+
+			window.addEventListener("load", rollDice, 'false');
+
+			function rollDice(){
+				var button = document.getElementById('rollbutton');
+				button.addEventListener('click', diceRolls, 'false');
+				imgObjects[0] = document.getElementById("die1");
+				imgObjects[1] = document.getElementById("die2");
+				imgObjects[2] = document.getElementById("die3");
+				imgObjects[3] = document.getElementById("die4");
+			}
+
+			function diceRolls(){
+				setImage(imgObjects[0]);
+				setImage(imgObjects[1]);
+				setImage(imgObjects[2]);
+				setImage(imgObjects[3]);
+			}
+
+			function setImage(dieImg){
+				die = random(6);
+				dieImg.setAttribute("src", imgFileNames[die]);
+				// dieImg.setAttribute("src","./images/die" + die + ".png");
+			}
+
+			function random(num){
+				return Math.floor(Math.random()*num);
+			}
+
+			//end script
+		</script>
+	</head>
+	<body>
+		<form action="#">
+			<input type="button" id="rollbutton" value="roll dice">
+		</form>
+		<ul>
+			<img src="./images/die1.png" id="die1">
+			<img src="./images/die1.png" id="die2">
+			<img src="./images/die1.png" id="die3">
+			<img src="./images/die1.png" id="die4">
+		</ul>
+	</body>
+</html>
