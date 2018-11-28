@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Andrew Tran -->
+		<meta charset="utf-8">
+		<title>4-JS-Recursive</title>
+		<style media="screen">
+
+		</style>
+		<script type="text/javascript">
+			// global variables
+			var outstr = "";
+			var m;
+			var n;
+
+			// calls function start as soon as window is loaded
+			window.addEventListener("load", start, false);
+
+			function start(){
+
+				//event listener for submit button to call function calculateA()
+				document.getElementById("subButton").onclick = calculateA();
+
+				function calculateA(){
+					// getting user entered value from the form using the value attribute
+					m = document.getElementById("inputValueM").value;
+					n = document.getElementById("inputValueN").value;
+
+					//type conversion
+					parseInt(m);
+					parseInt(n);
+
+					console.log(m);
+					console.log(n);
+					console.log(A(m,n));
+
+					//calls function A(m,n) and displays returned results
+					outstr += "<p>results of function A("+m+","+n+") is " + A(m,n) + "</p>";
+				}
+
+				function A(m, n){
+					if(m == 0){
+						n++;
+						return n;
+					}else if(m > 0 && n == 0){
+						A(m-1, 1);
+					}else if(m > 0 && n > 0){
+						A(m-1, A(m, n-1));
+					}
+				}
+
+				if(document.getElementById("results") != null){
+					document.getElementById("results").innerHTML += outstr;
+				}
+			}// end start
+		</script>
+	</head>
+	<body>
+		<h1>Calculating A(m,n)</h1>
+		<form class="" action="#" method="post">
+			<!-- 2 text inputs -->
+			<div>
+				<label>Enter value for m: <input type="text" id="inputValueM" value="1"></label>
+			</div>
+			<div>
+				<label>Enter value for n: <input type="text" id="inputValueN" value="1"></label>
+			</div>
+			<p>
+				<!-- submit button -->
+				<input type="button" id="subButton" value="SUBMIT!">
+			</p>
+		</form>
+		<div id="results">
+			<!-- display results -->
+		</div>
+	</body>
+</html>
