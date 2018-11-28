@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>november 26,2018</title>
+		<style media="screen">
+
+		</style>
+		<script type="text/javascript">
+			// global variables
+			var outstr = "";
+			var output;
+			var myArray = [];
+			var numbers = [];
+			var userNum;
+			var pos;
+			var s = 'Zebra';
+			var s2 = 'Mammoth?';
+			var s3 = "this is me";
+
+			// lets the function start load when the window loads.
+			window.addEventListener("load", start, false);
+
+			function random(num){
+				return Math.floor(Math.random()*num + 1); //+1 starts at 1 to num
+			}
+
+			function start(){
+				outstr += "<p>char at index 3 of " + s + " is " + s.charAt(3) + " </p>";
+				outstr += "<p>charcode at index 3 of " + s2 + " is " + s2.charCodeAt(3) + "</p>";
+				outstr += "<p>uppercase of "+s+ " is " + s.toUpperCase() +"</p>";
+				outstr += "<p>lowercase of " + s2 + " is " + s2.toLowerCase() +"</p>";
+				outstr += "<p>index of \'is\' of " +s3+" = " + s3.indexOf("is")+ "</p>";
+				outstr += "<p>creating a string from charcode " + String.fromCharCode(53,64,51,54,65)+"</p>";
+				outstr += "<p>splitting \'" + s3 + "\' with a space = " + s3.split(" ") +"</p>";
+				document.getElementById("out").innerHTML += outstr;
+			}
+
+			// function start(){
+			// 	// populate myArray
+			// 	for(let i = 0; i<10; i++){
+			// 		myArray[i] = random(10);
+			// 	}
+			// 	// myArray.sort(compare);
+			// 	// function expression is
+			// 	myArray.sort(function compareMe(a ,b){ return a - b;});
+			// 	// anonymous function
+			// 	// myArray.sort(function(a,b){return a-b;});
+			//
+			// 	outstr += "<p> sorted array is " + myArray.join() + " </p>";
+			// 	// document.getElementById("out").innerHTML += outstr;
+			//
+			// 	// populate numbers array
+			// 	for(let i = 0; i <= 99; i++){
+			// 		numbers[i] = i * 2;
+			// 	}
+			//
+			// 	// userNum = parseInt(window.prompt("what number to search for? ",98));
+			// 	pos = numbers.indexOf(random(99*2));
+			//
+			// 	if(pos == -1){
+			// 		outstr += "<p>not found</p>";
+			// 	}else{
+			// 		outstr += "<p>found in position " + pos + ".</p>"
+			// 	}
+			//
+			// 	//init array
+			// 	var my2dArray = new Array();
+			// 	my2dArray[0] = new Array();
+			// 	my2dArray[1] = new Array();
+			// 	my2dArray[2] = new Array();
+			//
+			// 	//populate 2d Array
+			// 	// for(let i = 0; i < 3; i++){
+			// 	// 	for(let j = 0; j < 2; j++){
+			// 	// 		my2dArray[i][j] = random(20);
+			// 	// 	}
+			// 	// }
+			//
+			// 	// populating 2d array with for in loops
+			// 	for(row in my2dArray){
+			// 		for(col in my2dArray){
+			// 			my2dArray[row][col] = random(20);
+			// 		}
+			// 	}
+			//
+			// 	outstr += "<p>my 2d array [" + my2dArray + "]</p>"
+			//
+			// 	document.getElementById("out").innerHTML += outstr;
+			// }// end start
+			//
+			// function compare(a, b){
+			// 	// if(a == b){
+			// 	// 	return 0;
+			// 	// }else if(a  > b){
+			// 	// 	return 1;
+			// 	// }else{
+			// 	// 	return -1;
+			// 	// }
+			// 	return a - b;
+			// }// end compare
+
+
+		</script>
+	</head>
+	<body>
+		<div id="out">
+
+		</div>
+	</body>
+</html>
