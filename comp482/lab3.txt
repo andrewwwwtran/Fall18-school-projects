@@ -1,0 +1,61 @@
+due Dec 17 2018
+
+IDEA
+	given a set of integers, find the i-th smallest using the medians of medians method
+
+INPUT FORMAT
+	input file is called 'input3.txt'
+	first line is the values of i (item desired) and N (number of items)
+	remaining lines will consist of at least N additional integers (only the first N should be used - any extra ignore)
+
+OUTPUT
+	i-th smallest value out of the N values which must be calculated using the medians of medians method
+	output should be the same as if you were to sort the N items and return the item in array position i-1
+		i-1 instead of i because array is 0 index
+
+pseudo code
+
+public int ithItem (int i, int N, int[] data){
+	int answer, mom, j=0, k=0, 1;
+	int[] medians, smaller, larger;
+
+	if(N < someSmallValueLikeFifty){
+		arrays.sort(data);
+		answer = data[i-1];
+	}else{
+		medians = new int[N/5];
+		smaller = new int[something];
+		larger = new int[something];
+		for(l=0; l<N/5; l++){
+			medians[l] = median(data[5*l], data[5*1+1], ... , data[5*l+4]);
+		}
+		mom = ithItem(N/10, N/5, medians);
+		for(l=0; l<N; j++){
+			if(data[l] <= mom){
+				smaller[j++] = data[l];
+			}else{
+				larger[k++] = data[l];
+			}
+		}
+		if(i < j){
+			ans = ithItem(i, j, smaller);
+		}else{
+			ans = ithItem(i-j, k, larger);
+		}
+	}
+	return ans;
+}//end ithItem
+
+EXAMPLES
+
+if input3.txt contained
+3 5
+1 4 5 7 9
+output would be 5
+
+if input3.txt contained
+7 10
+7 4 19 10 12 8 6
+1 2
+3 100 200 77 82 99 189 12 81 28 17 5
+output would be 8
