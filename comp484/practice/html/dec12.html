@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>dec 12 2018</title>
+		<script type="text/javascript">
+			var jsStr = '{"name":{"firstName":"John","lastName":"Smith"},"address":"1010 new street","phone":"123-4567890","interests":{"books":["Animal Farm","The Giver"],"movies":["Inferno","The Lobster"]}}';
+
+			//convert this json string to a javascript object
+			var jsObj = JSON.parse(jsStr);
+
+			jsObj.name.firstName = "drew";
+			jsObj.interests.books[0] = "green eggs and ham";
+			console.dir(jsObj);
+
+			//converting a javascript object back to a json string
+			var myStr = JSON.stringify(jsObj);
+
+			console.log(myStr);
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
