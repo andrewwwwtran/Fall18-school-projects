@@ -1,0 +1,113 @@
+Andrew Tran
+Comp 484
+homework 7 mySQL
+due 12/10/18
+
+
+1. List all ISBN numbers in Titles table.
+##the query retrieves all ISBN's from the table named Titles
+SELECT ISBN FROM Titles;
++------------+
+| ISBN       |
++------------+
+| 0132121360 |
+| 0132151421 |
+| 0132152134 |
+| 0132404168 |
+| 0132575663 |
+| 0132662361 |
+| 013705842X |
++------------+
+
+2. List all the ISBN numbers with "Abbey Deitel" as the author.
+##since Abbey Dietel has author id as 3, we retrieve all ISBN in the AuthorISBN table where AuthorID = 3
+SELECT ISBN FROM AuthorISBN WHERE AuthorID='3';
++------------+
+| ISBN       |
++------------+
+| 0132121360 |
+| 013705842X |
++------------+
+
+3. List all authors firstName and lastName whose firstName ends in "y".
+##produces list of author's names in authors table where their firstname ends in a y
+SELECT FirstName, LastName FROM Authors WHERE FirstName LIKE '%y';
++-----------+----------+
+| FirstName | LastName |
++-----------+----------+
+| Harvey    | Deitel   |
+| Abbey     | Deitel   |
++-----------+----------+
+
+4. List the firstName off all authors who wrote a book with ISBN='013705842X';
+## produces list of first names of authors where the isbn = 013705842X
+SELECT FirstName FROM Authors
+INNER JOIN AuthorISBN
+ON Authors.AuthorID = AuthorISBN.AuthorID
+WHERE ISBN='013705842X';
++-----------+
+| FirstName |
++-----------+
+| Paul      |
+| Harvey    |
+| Abbey     |
+| Michael   |
+| Eric      |
++-----------+
+
+5.Insert a new record into Authors table with your name.
+## no author id needed because its auto incremented, inserts values 'Andrew' and 'Tran' into FirstName and LastName of Authors table
+INSERT INTO Authors(FirstName, LastName) VALUES('Andrew','Tran');
+Query OK, 1 row affected (0.01 sec)
+SELECT * from Authors;
++----------+-----------+----------+
+| AuthorID | FirstName | LastName |
++----------+-----------+----------+
+|        1 | Paul      | Deitel   |
+|        2 | Harvey    | Deitel   |
+|        3 | Abbey     | Deitel   |
+|        4 | Michael   | Morgano  |
+|        5 | Eric      | Kern     |
+|        6 | Andrew    | Tran     |
++----------+-----------+----------+
+
+6. Modify the firstName of 'Paul Deitel' to 'John' in Authors table.
+## Updates the author's firstname to john where author id = 1
+UPDATE Authors SET FirstName = 'John' WHERE AuthorID = '1';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+SELECT * from Authors;
++----------+-----------+----------+
+| AuthorID | FirstName | LastName |
++----------+-----------+----------+
+|        1 | John      | Deitel   |
+|        2 | Harvey    | Deitel   |
+|        3 | Abbey     | Deitel   |
+|        4 | Michael   | Morgano  |
+|        5 | Eric      | Kern     |
+|        6 | Andrew    | Tran     |
++----------+-----------+----------+
+
+7. All required queries to successfully delete the record from Titles table where ISBN = '0132121360'
+##since you can't directly delete the ISBN from Titles table first because the ISBN was associated with ISBN in the AuthorISBN table, delete the isbn from AuthorISBN table first then delete from Titles table.
+MariaDB [books]> DELETE FROM AuthorISBN
+    -> WHERE ISBN = '0132121360';
+Query OK, 4 rows affected (0.00 sec)
+
+MariaDB [books]> DELETE FROM Titles
+    -> WHERE ISBN = '0132121360';
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [books]> SELECT * FROM Titles;
++------------+-------------------------------------------------+---------------+-----------+
+| ISBN       | Title                                           | EditionNumber | Copyright |
++------------+-------------------------------------------------+---------------+-----------+
+| 0132151421 | Visual C# 2010 How to Program                   |             4 | 2011      |
+| 0132152134 | Visual Basic 2010 How to Program                |             5 | 2011      |
+| 0132404168 | C How to Program                                |             6 | 2010      |
+| 0132575663 | Java How to Program                             |             9 | 2012      |
+| 0132662361 | C++ How to Program                              |             8 | 2012      |
+| 013705842X | iPhone for Programmers: An App Driven Approach  |             1 | 2010      |
++------------+-------------------------------------------------+---------------+-----------+
+6 rows in set (0.00 sec)
