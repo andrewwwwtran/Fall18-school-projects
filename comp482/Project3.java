@@ -10,44 +10,69 @@ import java.io.IOException;
 
 public class Project3{
 
-	public static void main(String[] args){
+	public int median(int a, int b, int c, int d, int e){
+		int med;
+		int[] testMedian = [a,b,c,d,e];
+		testMedian.sort();
+		med = testMedian[2];
+		return med;
+	}
+
+	public int ithItem(int i, int N, ArrayList<Integer> data){
 		//init
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		int answer = 0;
+		int answer;
 		int j = 0;
 		int k = 0;
+		int l;
 		int mom;
+		int[] medians;
+		int[] smaller;
+		int[] larger;
 
-		try{
-			//read File
-			Scanner scan = new Scanner(new File("input3.txt"));
-
-			//read the first two numbers and store them
-			int ithItem = scan.nextInt();
-			int nitems = scan.nextInt();
-
-			//write to an array
-			while(scan.hasNextInt()){
-				list.add(scan.nextInt());
+		if(nitems <= 30){
+			Collections.sort(data);
+			answer = data.get(i - 1);
+		}else{
+			//do median of median algorithm
+			medians = new int[N/5]; // each cell is going to contain 5 numbers
+			smaller = new int[N/2]; // half of array is going into smaller and larger array
+			larger = new int[N/2];
+			// iterate through the list, containing all the numbers (not sorted)
+			for(l = 0; l < N/5; l++){
+				medians[l] = median(data.get(5*l), data.get(5*l+1), data.get(5*l+2), data.get(5*l+3), data.get(5*l+4));
 			}
-			if(nitems <= 30){
-				Collections.sort(list);
-				answer = list.get(ithItem - 1);
+			mom = ithItem(N/10, N/5, medians);
+			for(l = 0; l < N; j++){
+				if(data[l] <= mom){
+					smaller[j++] = data[l];
+				}else{
+					larger[k++] = data[l];
+				}
+			}
+			if(i < j){
+				answer = ithItem(i, j, smaller)
 			}else{
-				//do median of median algorithm
-				
+				answer = ithItem(i-j, k, larger)
 			}
-
-
-
-			System.out.println(list);
-			System.out.println(answer);
-
-			//close scanner
-			scan.close();
-		}catch(Exception exception){//if file not found
-			System.out.println(exception);
+			return answer;
 		}
-	}//end main
+
+	}//end ithItem
+
+	public static void main(String[] args){
+		// init
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		// read file
+		Scanner scan = new Scanner(new File("input3.txt"));
+		int ith = scan.nextInt();
+		int nitems = scan.nextInt();
+		while(scan.hasNextInt()){
+			list.add(scan.nextInt());
+		}
+
+		ithItem(ith, nitems, list);
+
+		scan.close();
+	}// end main
 
 }//end project 3

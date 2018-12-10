@@ -16,7 +16,7 @@ OUTPUT
 pseudo code
 
 public int ithItem (int i, int N, int[] data){
-	int answer, mom, j=0, k=0, 1;
+	int answer, mom, j=0, k=0, l;
 	int[] medians, smaller, larger;
 
 	if(N < someSmallValueLikeFifty){
@@ -27,7 +27,7 @@ public int ithItem (int i, int N, int[] data){
 		smaller = new int[something];
 		larger = new int[something];
 		for(l=0; l<N/5; l++){
-			medians[l] = median(data[5*l], data[5*1+1], ... , data[5*l+4]);
+			medians[l] = median(data[5*l], data[5*l+1], ... , data[5*l+4]);
 		}
 		mom = ithItem(N/10, N/5, medians);
 		for(l=0; l<N; j++){
