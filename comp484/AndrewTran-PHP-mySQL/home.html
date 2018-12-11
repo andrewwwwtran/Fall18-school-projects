@@ -3,10 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<title>PHP-mySQL</title>
+		<style type = "text/css">
+    </style>
 	</head>
 	<body>
-		<form class="" action="index.html" method="post">
-
+		<form action="login.php" method="post">
+			<h1>Registered Users</h1>
+			<div><label>Username:<input type="text" name="username"> </label></div>
+			<div><label>Password:<input type="text" name="password"> </label></div>
+			<p><input type = "submit" name = "login" value = "Log In"></p>
+		</form>
+		<form action="signup.php" method="post">
+			<h1>New Users</h1>
+			<div><label>First Name: <input type="text" name="firstname"></label></div>
+			<div><label>Last Name: <input type="text" name="lastname"></label></div>
+			<div><label>Phone: <input type="text" name="phone" placeholder = "(555) 555-5555"></label></div>
+			<div><label>E-mail: <input type="text" name="email"></label></div>
+			<div><label>Username:<input type="text" name="username"> </label></div>
+			<div><label>Password: <input type="text" name="password"></label></div>
+			<div><label>Re-type Password: <input type="text" name="repassword"></label></div>
+			<p><input type = "submit" name = "signup" value = "Sign Up"></p>
 		</form>
 	</body>
 </html>

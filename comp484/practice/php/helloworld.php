@@ -7,8 +7,12 @@
 	<body>
 		<h1>My First PHP Page</h1>
 		<?php
-		echo "Hello World";
-		print("<p>Hello World</p>");
+			$first = array("zero", "one", "two");
+			$second[0] = "hello";
+			$second[1] = "bye";
+			$second[] = "csun";
+			var_dump($first);
+			var_dump($second);
 		?>
 	</body>
 </html>
