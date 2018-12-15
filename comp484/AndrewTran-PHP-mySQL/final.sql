@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS finaldb;
 
 CREATE DATABASE finaldb;
 
-USE final;
+USE finaldb;
 
 CREATE TABLE auth
 (
@@ -18,8 +18,8 @@ CREATE TABLE auth
 
 -- insert 3 records
 INSERT INTO auth (username, password, firstName, lastName, email, phone)
-VALUES ('username1', 'password1', 'Andrew', 'Proton', 'andrew.proton@gmail.com', '(123)456-7890)');
+VALUES ('andrewP123', 'password1', 'Andrew', 'Proton', 'andrew.proton@gmail.com', '(123)456-7890');
 INSERT INTO auth (username, password, firstName, lastName, email, phone)
-VALUES('username2', 'password2', 'Bob', 'Electron', 'bob.electron@gmail.com', '(321)654-0987');
+VALUES('bobE123', 'password2', 'Bob', 'Electron', 'bob.electron@gmail.com', '(321)654-0987');
 INSERT INTO auth (username, password, firstName, lastName, email, phone)
-VALUES('username3', 'password3', 'Carl', 'Neutron', 'carl.neutron@gmail.com', '(321)321-4214');
+VALUES('carlN123', 'password3', 'Carl', 'Neutron', 'carl.neutron@gmail.com', '(321)321-4214');

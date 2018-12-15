@@ -4,25 +4,75 @@
 		<meta charset="utf-8">
 		<title>PHP-mySQL</title>
 		<style type = "text/css">
+			form{
+    		width: 80%;
+    		margin: 0 auto;
+			}
+			input{
+				display: inline-block;
+			}
+			label{
+				display: inline-block;
+			}
+			#nomatch{
+				color: red;
+			}
     </style>
+		<script type="text/javascript">
+
+			var password1;
+			var password2;
+			var pwMatch;
+
+			window.addEventListener("load", validatepw, false);
+
+			function validatepw(){
+				pwMatch = document.getElementById("nomatch");
+				// get the two passwords from input
+				password1 = document.getElementById("pw1");
+				password2 = document.getElementById("pw2");
+
+				// check for password match with 2nd password on keyup
+				password2.addEventListener("keyup", passMatch)
+
+				function passMatch(){
+					if(password1.value == password2.value){
+						// remove text inside span element
+						pwMatch.textContent = " ";
+					}else{
+						pwMatch.textContent = "passwords don't match!";
+					}
+				}
+			}
+
+		</script>
 	</head>
 	<body>
+
 		<form action="login.php" method="post">
-			<h1>Registered Users</h1>
-			<div><label>Username:<input type="text" name="username"> </label></div>
-			<div><label>Password:<input type="text" name="password"> </label></div>
+			<h1>Registered Users: </h1>
+			<div><label>Username:<input type="text" name="username" required> </label></div>
+			<div><label>Password:<input type="password" name="password" required> </label></div>
 			<p><input type = "submit" name = "login" value = "Log In"></p>
+			<!-- Already registered users should be able to use this section to authenticate and log into the website. -->
 		</form>
+
 		<form action="signup.php" method="post">
-			<h1>New Users</h1>
-			<div><label>First Name: <input type="text" name="firstname"></label></div>
-			<div><label>Last Name: <input type="text" name="lastname"></label></div>
-			<div><label>Phone: <input type="text" name="phone" placeholder = "(555) 555-5555"></label></div>
-			<div><label>E-mail: <input type="text" name="email"></label></div>
-			<div><label>Username:<input type="text" name="username"> </label></div>
-			<div><label>Password: <input type="text" name="password"></label></div>
-			<div><label>Re-type Password: <input type="text" name="repassword"></label></div>
+			<h1>New Users: </h1>
+			<div><label>First Name: <input type="text" name="firstname" required></label></div>
+			<div><label>Last Name: <input type="text" name="lastname" required></label></div>
+			<div><label>Phone: <input type="text" name="phone" placeholder="(###) ###-####" required></label></div>
+			<div><label>E-mail: <input type="text" name="email" required></label></div>
+			<div><label>Username:<input type="text" name="username" required></label></div>
+			<div><label>Password: <input type="password" name="password" id="pw1" required></label></div>
+			<div>
+				<label>Re-type Password: <input type="password" name="repassword" id="pw2" required></label>
+				<span id="nomatch"></span>
+			</div>
 			<p><input type = "submit" name = "signup" value = "Sign Up"></p>
+			<!-- New users register in this form -->
+			<!-- Password matching -->
 		</form>
+
 	</body>
 </html>
