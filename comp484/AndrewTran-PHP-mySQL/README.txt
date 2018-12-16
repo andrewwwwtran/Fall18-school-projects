@@ -13,15 +13,17 @@ NOTE
 				-fixed!, used .textContent instead of .innerHTML, textContent's value isnt parsed.
 	- created the signup.php
 		- doesn't let webphp connect to the database.
+			- FIXED! got webphp to connect to the database, (probably didn't have permissions)
+		- don't have the right syntax for @email.com and phone number
+			- Fixed! had to add quotes around $email and $phone .
+		- for the table, echo'd the array.
+		- finished sign up php
 	- created the login.php
+		- finished the login
 
 
 FINISHED
 	final.sql
 	home.html
-TODO
 	signup.php
-		- get webphp user to connect to the db
-		- showTable function still needs work
 	login.php
-		- display user's info in a table after successful login
