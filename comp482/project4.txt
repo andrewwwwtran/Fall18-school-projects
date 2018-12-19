@@ -1,0 +1,39 @@
+Idea:
+	You will be given a 2 dimensional array of integers. You may start at any location and
+ 	can only move down or to the right and only if the value is smaller. You want to find the
+	number of entries in longest path you can take.
+
+Input Format:
+	The input file will be called input4.txt and be in the same directory as the java and class files.
+	The first line will be the dimensions of the array separated by whitespace (ie rows columns).
+	Each remaining line will be a whitespace separated list of the values of a row.
+
+Output:
+	The output will be the length (number of entries) of the longest path which starts on any square of the array,
+	can only continue to a smaller numerical value, and can only continue to the adjacent square directly to the
+	right or directly below. You must find this value using dynamic programming (not brute force).
+
+Examples: If input4.txt contained
+3 3
+9 8 7
+6 5 4
+3 2 1
+then the output would be
+5
+because there is the path 9-8-7-4-1 with 5 squares and no path is longer.
+If input4.txt contained
+5 7
+11 13 18 12 11 16 40
+12 17 15 14 19 12 41
+14 15 16 17 18 19 42
+16 30 28 20 24 25 43
+18 20 50 18 16 10 44
+then the output would be
+6
+because there is the path 30-28-20-18-16-10 with 6 squares and no path is longer.
+
+Details:
+	The program must be written in Java. The program must compile with the command javac *.java and run with the command java Project4. One common problem students have with this is placing the classes into packages. Don’t do this (just use the default package). Output should be sent to System.out. The program should be reasonably commented, indented, structured. The program should be submitted by placing all files in a directory named after you, zipping this directory and submitting via canvas (ie if the professor was submitting then all files would be placed in a directory called JohnNoga, this directory would be zipped, and uploaded in canvas).
+
+How:
+	The exact details are for you to determine, but you must use dynamic programming. It is likely that this project will require more time to figure out the recursion than to code the solution.

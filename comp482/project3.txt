@@ -1,0 +1,66 @@
+Idea:
+	You will be given a set of integers and need to find theithsmallest using the median of medians method.
+
+Input Format:
+	The input file will be called input3.txt and be in the same directory as the java and class files.
+	The first line will be the values of i(the item desired) and N(the number of items) separated by white space.
+	The remaining lines will consist of at least N additional integers (only the first N should be used - any extra ignored)
+	separated by white space.
+
+Output:
+	The output will be the ith smallest value out of the N values which must be calculated using the median of  medians  method.
+	In  other  words,  the  output  should  be  the  result  you  would  get  by  sorting  the N items  and returning the item
+	in array position[i−1] (the reason for position[i−1] instead of [i] is that java zero-indexes its array), but you will get very little credit if you actually solve the problem by sorting the array.
+
+	A reminder of how the median of medians method works (ignores details like: what if N is/isn’t a multiple of 5, what if N is/isn’t even, ...)  is included below.  Do not feel compelled to follow the exact details of the pseudo-code(ie using java’s ArrayList is probably easier than using an array), but the spirit (median of medians) must be followed.
+
+pseudo code
+
+public int ithItem(int i, int N, int[] data) {
+  int answer, mom, j=0, k=0, l;
+  int[] medians, smaller, larger;
+  if (N < someSmallValueLikeFifty){
+    arrays.sort(data);
+    answer = data[i-1];
+	}
+	else {
+    medians = new int[N/5];
+    smaller = new int[something];
+    larger = new int[something];
+    for (l=0; l<N/5; l++) {
+      medians[l] = median(data[5*l],data[5*l+1],...,data[5*l+4]);
+    }
+    mom = ithItem(N/10,N/5,medians);
+    for (l=0; l<N; l++) {
+      if (data[l] <= mom)
+        smaller[j++] = data[l];
+      else
+        larger[k++] = data[l];
+		}
+		if (i<j)
+    	ans = ithItem(i, j, smaller);
+    else
+      ans = ithItem(i-j, k, larger);
+	}
+	return ans;
+}
+
+Examples: If input3.txt contained
+3 5
+1 4 5 7 9
+then the output would be \begin{verbatim}
+5
+
+If input3.txt contained
+7 10
+7 4 19 10 12 8 6
+12
+3 100 200 77 82 99 189 12 81 28 17 5
+then the output would be
+8
+
+Details:
+	The program must be written in Java. The program must compile with the command javac *.java and run with the command java Project3. One common problem students have with this is placing the classes into packages. Don’t do this (just use the default package). Output should be sent to System.out. The program should be reasonably commented, indented, structured. The program should be submitted by placing all files in a directory named after you, zipping this directory and submitting via canvas (ie if the professor was submitting then all files would be placed in a directory called JohnNoga, this directory would be zipped, and uploaded in canvas).
+
+How:
+	The exact details are for you to determine, but you must use the median of medians method.
