@@ -64,7 +64,7 @@ public class Project3{
 		// int[] smaller;
 		// int[] larger;
 
-		if(N <= 5){
+		if(N <= 10){
 			Collections.sort(data);
 			answer = data.get(i - 1);
 		}else{
@@ -78,8 +78,8 @@ public class Project3{
 			}
 			// System.out.println("medians: " + medians);
 			mom = ithItem(N/10, N/5, medians);
-			// System.out.println("mom: " + mom);
-			// System.out.println("N : " + N);
+			System.out.println("mom: " + mom);
+			System.out.println("N : " + N);
 			for(l = 0; l < N; l++){
 				if(data.get(l) <= mom){
 					j++;
