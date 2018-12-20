@@ -1,6 +1,6 @@
 //comp 482 project 3
 //Andrew Tran
-//due : Dec 17 2018
+//due : Dec 20 2018
 
 import java.util.Scanner;
 import java.util.ArrayList;
