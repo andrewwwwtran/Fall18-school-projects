@@ -10,69 +10,114 @@ import java.io.IOException;
 
 public class Project3{
 
-	public int median(int a, int b, int c, int d, int e){
+	// mom method
+	public static int median(int a, int b, int c, int d, int e){
 		int med;
-		int[] testMedian = [a,b,c,d,e];
-		testMedian.sort();
-		med = testMedian[2];
-		return med;
+		int temp;
+
+		ArrayList<Integer> tList = new ArrayList<Integer>();
+		tList.add(a); // 0
+		tList.add(b);	// 1
+		tList.add(c); // 2
+		tList.add(d); // 3
+		tList.add(e); // 4
+
+		if(tList.get(0) < tList.get(1)){
+			Collections.swap(tList, 0, 1);
+		}
+		if(tList.get(2) < tList.get(3)){
+			Collections.swap(tList, 2, 3);
+		}
+		if(tList.get(0) < tList.get(2)){
+			Collections.swap(tList, 0, 2);
+			Collections.swap(tList, 1, 3);
+		}
+		if(tList.get(1) < tList.get(4)){
+			Collections.swap(tList, 1, 4);
+		}
+		if(tList.get(1) > tList.get(2)){
+			if(tList.get(2) > tList.get(4)){
+				return tList.get(2);
+			}else{
+				return tList.get(4);
+			}
+		}else{
+			if(tList.get(1) > tList.get(3)){
+				return tList.get(1);
+			}else{
+				return tList.get(3);
+			}
+		}
 	}
 
-	public int ithItem(int i, int N, ArrayList<Integer> data){
+	public static int ithItem(int i, int N, ArrayList<Integer> data){
 		//init
 		int answer;
 		int j = 0;
 		int k = 0;
 		int l;
 		int mom;
-		int[] medians;
-		int[] smaller;
-		int[] larger;
+		ArrayList<Integer> medians;
+		ArrayList<Integer> smaller;
+		ArrayList<Integer> larger;
+		// int[] medians;
+		// int[] smaller;
+		// int[] larger;
 
-		if(nitems <= 30){
+		if(N <= 5){
 			Collections.sort(data);
 			answer = data.get(i - 1);
 		}else{
-			//do median of median algorithm
-			medians = new int[N/5]; // each cell is going to contain 5 numbers
-			smaller = new int[N/2]; // half of array is going into smaller and larger array
-			larger = new int[N/2];
+			// do median of medians algorithm
+			medians = new ArrayList<Integer>(N/5); // each cell is going to contain 5 numbers
+			smaller = new ArrayList<Integer>(N); // about half of array is going into smaller and larger array
+			larger = new ArrayList<Integer>(N);
 			// iterate through the list, containing all the numbers (not sorted)
 			for(l = 0; l < N/5; l++){
-				medians[l] = median(data.get(5*l), data.get(5*l+1), data.get(5*l+2), data.get(5*l+3), data.get(5*l+4));
+				medians.add(l, median(data.get(5*l), data.get(5*l+1), data.get(5*l+2), data.get(5*l+3), data.get(5*l+4)));
 			}
+			// System.out.println("medians: " + medians);
 			mom = ithItem(N/10, N/5, medians);
-			for(l = 0; l < N; j++){
-				if(data[l] <= mom){
-					smaller[j++] = data[l];
+			// System.out.println("mom: " + mom);
+			// System.out.println("N : " + N);
+			for(l = 0; l < N; l++){
+				if(data.get(l) <= mom){
+					j++;
+					smaller.add(data.get(l));
+					// System.out.println("j: "+j);
 				}else{
-					larger[k++] = data[l];
+					k++;
+					larger.add(data.get(l));
+					// System.out.println("k: "+k);
 				}
 			}
 			if(i < j){
-				answer = ithItem(i, j, smaller)
+				answer = ithItem(i, j, smaller);
 			}else{
-				answer = ithItem(i-j, k, larger)
+				answer = ithItem(i-j, k, larger);
 			}
-			return answer;
 		}
-
+		return answer;
 	}//end ithItem
 
 	public static void main(String[] args){
-		// init
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		// read file
-		Scanner scan = new Scanner(new File("input3.txt"));
-		int ith = scan.nextInt();
-		int nitems = scan.nextInt();
-		while(scan.hasNextInt()){
-			list.add(scan.nextInt());
+		try{
+			// init
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			// read file
+			Scanner scan = new Scanner(new File("input3.txt"));
+			int ith = scan.nextInt();
+			int nitems = scan.nextInt();
+			for(int i = 0; i < nitems; i++){
+				list.add(scan.nextInt());
+			}
+
+			System.out.println("real mom is : " + ithItem(ith, nitems, list));
+
+			scan.close();
+		}catch(IOException e){
+			System.out.println(e);
 		}
-
-		ithItem(ith, nitems, list);
-
-		scan.close();
 	}// end main
 
 }//end project 3
