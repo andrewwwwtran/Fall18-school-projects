@@ -11,61 +11,71 @@ import java.io.IOException;
 public class Project4{
 
 	public static int nogasGame(int[][] list){
+		int highscore = 0;
 		ArrayList<Integer> highScoreList = new ArrayList<Integer>();
-		int highScore = 0;
 
 		// iterate through matrix
 		for(int row = 0; row < list.length; row++){
 			for(int col = 0; col < list[row].length; col++){
-				System.out.println("OUTSIDE WHILE row num: " + row);
-				System.out.println("OUTSIDE WHILE col num: " + col);
-				// go down or right if number is less than where you are
-				while(list[row][col] > list[row+1][col] || list[row][col] > list[row][col+1]){
-					if(list[row][col+1] > list[row+1][col]){
-						// go right
-						System.out.println("RIGHT row num: " + row);
-						System.out.println("RIGHT col num: " + col);
-						highScoreList.add(list[row][col]);
-						System.out.println("list so far: " + highScoreList);
-						col++;
-						System.out.println("RIGHT col++ num: " + col);
-					}else{
-						// go down
-						System.out.println("DOWN row num: " + row);
-						System.out.println("DOWN col num: " + col);
-						highScoreList.add(list[row][col]);
-						System.out.println("list so far: " + highScoreList);
-						row++;
+				// check if you can go right or down
+				while(col+1 < list[row].length || row+1 < list.length){
+					if(col+1 < list[row].length){
+						// can still go right
+						// check right side
+						if(list[row][col] > list[row][col+1]){
+							// add number you're at to list
+							highScoreList.add(list[row][col]);
+							System.out.println("hslist " + highScoreList);
+							highscore++;
+							col++;
+						}
+						// can't go right, check if you can go down
+						else if(list[row][col] > list[row+1][col]){
+							highScoreList.add(list[row][col]);
+							System.out.println("hslist " + highScoreList);
+							highscore++;
+							row++;
+						}
 					}
-					// prevent out of bounds error
-					if(row > list.length){
-						row--;
+					else if(row+1 < list.length){
+						// can still go down
+						// check below
+						if(list[row][col] > list[row+1][col]){
+							highScoreList.add(list[row][col]);
+							System.out.println("hslist " + highScoreList);
+							highscore++;
+							row++;
+						}
+						// can't go down, check if you can go right
+						else if(list[row][col] > list[row][col+1]){
+							highScoreList.add(list[row][col]);
+							System.out.println("hslist " + highScoreList);
+							highscore++;
+							col++;
+						}
 					}
-					if(col > list[row].length){
-						col--;
+					System.out.println("row: " + row);
+					System.out.println("col: " + col);
+					if(list[row][col] < list[row+1][col] && list[row][col] < list[row][col+1]){
+						break;
 					}
 				}// end while
-
-				System.out.println("outside while row num: " + row);
-				System.out.println("outside while col num: " + col);
-
-				System.out.println("high score list : " + highScoreList);
-
-				// update high score
-				if(highScore < highScoreList.size()){
-					highScore = highScoreList.size();
-				}
-				// reset high score list
-				highScoreList.clear();
-			}
-		}
-		return highScore;
+				// // update high score
+				// if(highScoreList.size() < highscore){
+				// 	highscore = highScoreList.size();
+				// 	// reset high score list
+				// 	highScoreList.clear();
+				// }
+			}// end for loop col
+		}// end for loop row
+		return highscore;
 	}
 
 	public static void main(String[] args) {
 		try{
 			// init
 			int[][] list;
+			int highscore = 0;
 			Scanner scan = new Scanner(new File("input4.txt"));
 
 			// read file
